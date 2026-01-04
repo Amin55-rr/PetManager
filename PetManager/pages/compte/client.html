@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client</title>
+
+  <link rel="stylesheet" href="../../assets/CSS/common.css">
+  <link rel="stylesheet" href="../../assets/CSS/dark-mode.css">
+
+  <style>
+    body{ visibility: visible;   font-family: Poppins, Arial, sans-serif; background:#f7f0f5 ; }
+    .wrap{ padding: 20px; max-width: 1100px; margin: 0 auto; }
+    .card{
+      background:#fff; border:1px solid #ddd; border-radius:12px;
+      padding:16px; margin-bottom:14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.06);
+    }
+    h2,h3{ margin: 0 0 10px; }
+    ul{ margin: 0; padding-left: 18px; }
+    li{ margin: 4px 0; }
+    /* Mise en grille pour éviter les textes collés */
+    .card ul{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px 16px;
+      list-style: none;
+      padding-left: 0;
+    }
+    .card li{
+      background: #f9fbff;
+      border: 1px solid #e6edf5;
+      border-radius: 10px;
+      padding: 10px 12px;
+      line-height: 1.4;
+    }
+    .btn{
+      padding:10px 14px; border:none; border-radius:10px;
+      cursor:pointer; font-weight:600;
+    }
+    .btn-red{ background:#e63946; color:#fff; }
+    .muted{ color:#666; }
+    .row{ display:flex; gap:10px; flex-wrap:wrap; }
+    .pill{ background:#eef7fb; padding:8px 10px; border-radius:999px; }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="card">
+      <h2>Mon espace client</h2>
+      <div class="row">
+        <div class="pill"><b>Email :</b> <span id="meEmail"></span></div>
+        <div class="pill"><b>Nom :</b> <span id="meName"></span></div>
+      </div>
+      <br>
+      <button class="btn btn-red" id="logoutBtn">Déconnexion</button>
+    </div>
+
+    <div class="card">
+      <h3>Mes animaux</h3>
+      <ul id="myAnimals"></ul>
+      <p class="muted" id="noAnimals" style="display:none;">Aucun animal associé.</p>
+    </div>
+
+    <div class="card">
+      <h3>Ma nourriture</h3>
+      <ul id="myFood"></ul>
+      <p class="muted" id="noFood" style="display:none;">Aucun achat nourriture.</p>
+    </div>
+
+    <div class="card">
+      <h3>Mes vaccinations</h3>
+      <ul id="myVacc"></ul>
+      <p class="muted" id="noVacc" style="display:none;">Aucune vaccination.</p>
+    </div>
+
+    <div class="card">
+      <h3>Mes rendez-vous</h3>
+      <ul id="myRdv"></ul>
+      <p class="muted" id="noRdv" style="display:none;">Aucun rendez-vous.</p>
+    </div>
+  </div>
+
+  <script src="../../assets/JS/client.js"></script>
+  <script src="../../assets/JS/dark-mode.js"></script>
+</body>
+</html>

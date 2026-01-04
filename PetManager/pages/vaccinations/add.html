@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajouter Vaccination</title>
+
+  <link rel="stylesheet" href="../../assets/CSS/addv.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="card">
+    <h3>Nouvelle vaccination</h3>
+
+    <form id="vaccForm">
+      <div class="grid-2">
+
+        <div class="field">
+          <label>Animal <span class="req">*</span></label>
+          <select id="animalId" required>
+            <option value="">Sélectionner</option>
+          </select>
+          <small class="err" id="errAnimal"></small>
+        </div>
+
+        <div class="field">
+          <label>Nom du vaccin <span class="req">*</span></label>
+          <input id="vaccine" type="text" placeholder="Ex: Rage, Typhus..." required>
+          <small class="err" id="errVaccine"></small>
+        </div>
+
+        <div class="field">
+          <label>Date de vaccination <span class="req">*</span></label>
+          <input id="date" type="date" required>
+          <small class="err" id="errDate"></small>
+        </div>
+
+        <div class="field">
+          <label>Date prochaine dose <span class="req">*</span></label>
+          <input id="nextDate" type="date" required>
+          <small class="err" id="errNext"></small>
+        </div>
+
+        <div class="field">
+          <label>Vétérinaire <span class="req">*</span></label>
+          <input id="vet" type="text" placeholder="Dr. Dupont" required>
+          <small class="err" id="errVet"></small>
+        </div>
+
+        <div class="field">
+          <label>Prix (MAD) <span class="req">*</span></label>
+          <input id="priceEur" type="number" min="0" step="0.01" value="0" required>
+          <small class="err" id="errPrice"></small>
+        </div>
+
+      </div>
+
+      <div class="field">
+        <label>Notes</label>
+        <textarea id="notes" rows="4" placeholder="Informations complémentaires..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary btn-wide" type="submit">Ajouter</button>
+        <a class="btn btn-light" href="./list.html">Annuler</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../assets/JS/addv.js"></script>
+  <script src="../../assets/JS/dark-mode.js"></script>
+</body>
+</html>

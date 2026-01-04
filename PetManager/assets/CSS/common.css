@@ -1,0 +1,206 @@
+body{
+    margin: 0;
+    padding: 0; 
+    font-family: 'Poppins', sans-serif; 
+    visibility: hidden;
+    background-color: #b8dce4;
+}
+header{
+        font-family: 'Poppins', sans-serif; 
+        background-color: white;
+        padding-bottom: 1pt;
+}
+#logo{
+    position: absolute;
+    
+}
+.logo img{
+    padding : 30px ;
+    width: 100px;
+    border-radius: 30%;
+}
+.user{
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    color: #1f92ac;
+}
+#nom{
+    margin-left: 5px;
+}
+#logout{
+    font-family: 'Poppins', sans-serif; 
+    position: absolute;
+    right: 30px;
+    top : 80px;
+    height: 40px;
+    background: #e63946;
+    color : white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+#logout:hover {
+    background: #d62828; 
+}
+#logout:active{
+    transform: scale(0.96);
+}
+.lesdeux{
+    display: flex;
+    align-items: center;
+}
+ul{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+.titres h2, 
+.titres h4 {
+    margin: 0;      
+    padding: 0;
+    line-height: 1.1; 
+}
+.titres{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+nav a,nav a i{
+    color: #666;
+}
+li.actif a,li.actif a i{
+    color: #1f92ac;
+}
+ul li{
+    list-style: none;
+    position: relative;
+}
+li.actif::after{
+    content: "";
+    height: 3px;
+    background: #1f92ac ;
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.langue{
+    margin: 10px 10px 10px 10px;
+    font-size: 14px;
+    width: 100px;
+    font-size: larger;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    background: #4AB3D8;
+    cursor: pointer;
+}
+
+/* RTL support (matches html[dir] and body[dir]) */
+[dir="rtl"], body[dir="rtl"] {
+    direction: rtl;
+}
+[dir="rtl"] .user, body[dir="rtl"] .user {
+    right: auto;
+    left: 40px;
+}
+[dir="rtl"] #logout, body[dir="rtl"] #logout {
+    right: auto;
+    left: 30px;
+}
+[dir="rtl"] ul, body[dir="rtl"] ul {
+    direction: rtl;
+}
+[dir="rtl"] .titres, body[dir="rtl"] .titres{
+    text-align: right;
+}
+[dir="rtl"] .lesdeux, body[dir="rtl"] .lesdeux{
+    flex-direction: row-reverse;
+}
+[dir="rtl"] input, [dir="rtl"] select, [dir="rtl"] textarea,
+body[dir="rtl"] input, body[dir="rtl"] select, body[dir="rtl"] textarea {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ensure user block aligns well */
+.user{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+[dir="rtl"] .user i, body[dir="rtl"] .user i{
+    margin-left: 6px;
+    margin-right: 0;
+}
+[dir="rtl"] .user span, body[dir="rtl"] .user span{
+    text-align: left;
+}
+
+/* Header logo & titles RTL adjustments */
+[dir="rtl"] .lesdeux, body[dir="rtl"] .lesdeux {
+    justify-content: flex-end;
+    align-items: center;
+}
+[dir="rtl"] .logo img, body[dir="rtl"] .logo img {
+    padding-left: 0;
+    padding-right: 30px;
+}
+[dir="rtl"] .titres, body[dir="rtl"] .titres {
+    text-align: right;
+    margin-right: 10px;
+}
+[dir="rtl"] .logo, body[dir="rtl"] .logo {
+    order: 2;
+}
+[dir="rtl"] .titres, body[dir="rtl"] .titres {
+    order: 1;
+}
+
+/* ==================== DARK MODE STYLES ==================== */
+/* Mode sombre - on change uniquement les fonds blancs en sombre */
+/* Les couleurs bleues (#b8dce4, #1f92ac, etc.) restent inchang�es */
+
+body.dark-mode {
+    background-color: #b8dce4; /* On garde le fond bleu */
+}
+
+body.dark-mode header {
+    background-color: #1a1a2e; /* Header devient sombre */
+}
+
+body.dark-mode .titres h2,
+body.dark-mode .titres h4 {
+    color: #e0e0e0; /* Texte clair pour le mode sombre */
+}
+
+body.dark-mode .user {
+    color: #4AB3D8; /* On garde la couleur bleue */
+}
+
+body.dark-mode nav a,
+body.dark-mode nav a i {
+    color: #b0b0b0; /* Liens en gris clair */
+}
+
+body.dark-mode li.actif a,
+body.dark-mode li.actif a i {
+    color: #4AB3D8; /* On garde la couleur bleue pour l'actif */
+}
+
+/* RTL Dark Mode Support */
+[dir="rtl"] #darkModeToggle, body[dir="rtl"] #darkModeToggle {
+    right: auto;
+    left: 150px;
+}

@@ -1,0 +1,97 @@
+body {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    font-family: "Poppins", sans-serif;
+    background: #c3f1fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+fieldset.Ajout {
+    background: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 18px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+input,
+select {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    font-size: 15px;
+    outline: none;
+    transition: all .2s ease;
+}
+
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #4AB3D8;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    margin-top: 10px;
+}
+
+/* Bouton Enregistrer (classe .ajout dans add.html) */
+.ajout {
+    padding: 12px; /* même hauteur que Annuler */
+    background: #1f92ac; /* bleu principal */
+    color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(31,146,172,0.25);
+}
+.ajout:hover {
+    background: #167d93; /* bleu un peu plus foncé au hover */
+}
+.ajout:active {
+    transform: translateY(1px);
+}
+
+
+#annuler {
+    background: #f0f0f0;
+    color: #333;
+}
+#annuler:hover {
+    background: #4AB3D8;
+}
+
+/* Petites améliorations d'UX */
+input:focus,
+select:focus {
+    border-color: #4AB3D8;
+    box-shadow: 0 0 0 3px rgba(74,179,216,0.2);
+}
+
+@media (max-width: 520px) {
+    fieldset.Ajout {
+        width: 95vw;
+        padding: 22px;
+    }
+}
+

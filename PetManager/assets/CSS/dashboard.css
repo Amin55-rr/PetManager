@@ -1,0 +1,17 @@
+    .dash{ padding:20px 30px; }
+    .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-bottom:18px; }
+    .card{ background:white; border-radius:14px; padding:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    .card-title{ color:#1f92ac; font-weight:600; font-size:14px; }
+    .card-value{ margin-top:10px; font-size:28px; font-weight:700; color:#083b46; }
+
+    .filters{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .filters select{ padding:10px 12px; border-radius:12px; border:none; box-shadow:0 2px 6px rgba(0,0,0,0.15); }
+
+    .panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; }
+    .panel{ background:white; border-radius:14px; padding:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    .panel h3{ margin:0 0 12px 0; color:#1f92ac; }
+
+    .bar{ height:10px; background:rgba(74,179,216,0.18); border-radius:99px; overflow:hidden; }
+    .bar > div{ height:100%; width:0%; background:#1f92ac; border-radius:99px; transition:width .25s ease; }
+    .row{ display:grid; grid-template-columns:110px 1fr 70px; gap:10px; align-items:center; padding:8px 0; }
+    .row span{ font-size:14px; }

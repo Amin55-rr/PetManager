@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/CSS/common.css">
+  <title id="title"></title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/CSS/dashboard.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="lesdeux">
+    <div class="logo">
+      <img src="../assets/img/logo.png" alt="">
+    </div>
+    <div class="titres">
+      <h2 id="titre">Pet Manager</h2>
+      <h4 id="subtitle">Gérez vos compagnons à quatre pattes</h4>
+    </div>
+  </div>
+
+  <div class="user">
+    <i class="fa-solid fa-user"></i><span id="nom"></span>
+  </div>
+
+  <button id="logout">Se deconecter</button>
+
+  <nav>
+    <ul>
+      <li class="actif"><a id="dashboard" href="dashboard.html">
+        <i class="fa-solid fa-chart-line"></i><span>dashboard</span></a></li>
+      <li><a href="animaux/list.html" id="animaux">
+        <i class="fa-solid fa-paw"></i><span>Animaux</span></a></li>
+      <li><a href="nourriture/list.html" id="nourriture">
+        <i class="fa-solid fa-bone"></i><span>Nourriture</span></a></li>
+      <li><a id="vaccinations" href="vaccinations/list.html">
+        <i class="fa-solid fa-syringe"></i><span>Vaccinations</span></a></li>
+      <li><a id="RDV" href="RDV/list.html">
+        <i class="fa-regular fa-calendar"></i><span>Rendez-vous</span></a></li>
+      <li><a id="espece" href="especes/list.html">
+        <i class="fa-solid fa-list-ul"></i><span>Especes</span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="dash">
+  <!-- Filtres dynamiques -->
+  <section class="filters" style="background:#fff; padding:20px; border-radius:8px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <h3 id="filterTitle" style="margin:0 0 15px 0; color:#1f92ac;">📊 Filtres dynamiques</h3>
+    <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+      <div style="display:flex; flex-direction:column; gap:5px;">
+        <label for="filterPeriod" id="labelPeriod" style="font-weight:600; font-size:14px;">Période :</label>
+        <select id="filterPeriod" style="padding:8px 12px; border:1px solid #ddd; border-radius:6px; font-size:14px; cursor:pointer;">
+          <option value="all" id="optionAll">Toutes les périodes</option>
+          <option value="today" id="optionToday">Aujourd'hui</option>
+          <option value="week" id="optionWeek">Cette semaine</option>
+          <option value="month" id="optionMonth">Ce mois</option>
+          <option value="year" id="optionYear" selected>Cette année</option>
+        </select>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:5px;">
+        <label for="filterSpecies" id="labelSpecies" style="font-weight:600; font-size:14px;">Espèce :</label>
+        <select id="filterSpecies" style="padding:8px 12px; border:1px solid #ddd; border-radius:6px; font-size:14px; cursor:pointer;">
+          <option value="all" id="optionAllSpecies">Toutes les espèces</option>
+        </select>
+      </div>
+      <button id="btnResetFilters" style="padding:10px 20px; background:#dc3545; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:600; margin-top:20px;">🔄 Réinitialiser</button>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card"><div class="card-title" id="kpi_animals_label">Total animaux</div><div class="card-value" id="kpi_animals">0</div></div>
+    <div class="card"><div class="card-title" id="kpi_vax_label">Total vaccinations</div><div class="card-value" id="kpi_vax">0</div></div>
+    <div class="card"><div class="card-title" id="kpi_rdv_label">Total RDV</div><div class="card-value" id="kpi_rdv">0</div></div>
+    <div class="card"><div class="card-title" id="kpi_food_label">Total achats nourriture</div><div class="card-value" id="kpi_food">0</div></div>
+    <div class="card"><div class="card-title" id="kpi_food_cost_label">Coût nourriture (total)</div><div class="card-value" id="kpi_food_cost">0 MAD</div></div>
+    <div class="card"><div class="card-title" id="kpi_vax_cost_label">Coût vaccins (total)</div><div class="card-value" id="kpi_vax_cost">0 MAD</div></div>
+  </section>
+
+  <section class="panels">
+    <div class="panel">
+      <h3 id="chartTitle1">Animaux par espèce</h3>
+      <canvas id="chart_species" width="400" height="300"></canvas>
+    </div>
+
+    <div class="panel">
+      <h3 id="chartTitle2">Achats nourriture par type</h3>
+      <canvas id="chart_foodtype" width="400" height="300"></canvas>
+    </div>
+
+    <div class="panel">
+      <h3 id="chartTitle3">RDV par mois (année)</h3>
+      <canvas id="chart_rdv_month" width="400" height="200"></canvas>
+    </div>
+
+    <div class="panel">
+      <h3 id="chartTitle4">Dépenses nourriture par mois (année)</h3>
+      <canvas id="chart_food_month" width="400" height="200"></canvas>
+    </div>
+
+    <div class="panel">
+      <h3 id="chartTitle5">Dépenses vaccins par mois (année)</h3>
+      <canvas id="chart_vax_month" width="400" height="200"></canvas>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <select class="langue" id="langue">
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+    <option value="ar">العربية</option>
+  </select>
+</footer>
+<script src="../assets/JS/auth.js"></script>
+<script src="../assets/JS/init-database.js"></script>
+<script src="../assets/JS/dashboard-charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titre"></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <link rel="stylesheet" href="assets/CSS/index.css">
+   <link rel="stylesheet" href="assets/CSS/dark-mode.css">
+   <link rel="icon" type="image/png" href="assets/img/logo.png">
+</head>
+<body>
+    <div class="Connexion">
+        <button id="darkModeToggle" style="position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: #1f92ac; color: white; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px;"><i class="fa-solid fa-moon"></i></button>
+        <img class="logo" src="assets/img/logo.png" alt="">
+        <select class="langue"id="langue">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+        </select>
+        <h2 id="title">Pet Manager</h2>
+        <h4 id="subtitle">Gérez votre compagnon à quatre pattes</h4>
+        <fieldset>
+                <label id="label-email" for="email">Email</label>
+                <input type="email" id="email" required>
+                <label for="password" id="label-password">Mot de passe</label>
+                <input type="password" id="password" required>
+                <button id="btn-login">Se connecter</button>
+        </fieldset>
+    </div>
+    <script src="assets/JS/init-database.js"></script>
+    <script src="assets/JS/auth.js"></script>
+    <script src="assets/JS/index.js"></script>
+    <script src="assets/JS/dark-mode.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../assets/CSS/adda.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title">Ajout / Modification Animal</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <form id="formAnimal">
+    <fieldset class="Ajout">
+
+      <label for="nom" id="label_name">Nom :</label>
+      <input id="nom" type="text" placeholder="Ex : Michou" required>
+
+      <label for="date_naissance" id="label_birth_date">Date de naissance</label>
+      <input id="date_naissance" type="date">
+
+      <label for="poids" id="label_weight">Son poids (kg)</label>
+      <input id="poids" type="number" min="0">
+
+      <label for="sexe" id="label_sex">Sexe :</label>
+      <select id="sexe">
+        <option value="male" id="option_male">Mâle</option>
+        <option value="femelle" id="option_female">Femelle</option>
+      </select>
+
+      <label for="espece" id="label_species">Espèce :</label>
+      <select id="espece"></select>
+
+      <label for="proprietaire" id="label_owner">Nom du propriétaire :</label>
+      <input id="proprietaire" type="text" placeholder="Ahmed" required>
+
+      <h3 id="account_title">Création du compte client</h3>
+
+      <label for="email" id="label_email">Email du propriétaire</label>
+      <input id="email" type="email" required>
+
+      <label for="password" id="label_password">Mot de passe</label>
+      <input id="password" type="password" required>
+
+      <button type="submit" class="ajout" id="btn_save">Enregistrer</button>
+      <button type="button" class="annuler" id="annuler">Annuler</button>
+
+    </fieldset>
+  </form>
+
+  <footer>
+    <select class="langue" id="langue">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+    </select>
+  </footer>
+
+  <script src="../../assets/JS/adda.js"></script>
+</body>
+</html>

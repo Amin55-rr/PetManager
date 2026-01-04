@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../assets/CSS/adde.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title id="title">Ajout Espèce</title>
+</head>
+<body>
+    <form>
+        <fieldset class="Ajout">
+            <label>Espèce :</label>
+            <select id="selectEspece"></select>
+            <div class="especesList"></div>
+            <button type="submit" class="ajout" id="ajouter">Ajouter</button>
+            <button type ="button" class="annuler" id="annuler">Annuler</button>
+        </fieldset>
+
+        <footer>
+            <select class="langue" id="langue">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </footer>
+
+        <!-- Toujours charger especes.js AVANT adde.js -->
+        <script src="../../assets/JS/especes.js"></script>
+        <script src="../../assets/JS/adde.js"></script>
+        <script src="../../assets/JS/dark-mode.js"></script>
+    </form>
+</body>
+</html>

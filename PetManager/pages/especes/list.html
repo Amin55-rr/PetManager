@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/CSS/common.css">
+    <link rel="stylesheet" href="../../assets/CSS/liste.css">
+    <title id="title"></title> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/png" href="../../assets/img/logo.png">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="lesdeux">
+            <div class="logo">
+                <img src="../../assets/img/logo.png" alt="">
+            </div>
+            <div class="titres">
+                <h2 id="titre">Pet Manager</h2>
+                <h4 id="subtitle">Gérez vos compagnons à quatre pattes</h4>
+            </div>
+            <div class="user">
+                <i class="fa-solid fa-user"></i><span id="nom"></span>
+            </div>
+        </div>
+        <button id="logout">Se deconecter</button>
+
+        <nav>
+            <ul>
+                <li><a id="dashboard" href="../dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>dashboard</span>
+                    </a>
+                </li>
+                <li><a href="../animaux/list.html"id="animaux">
+                    <i class="fa-solid fa-paw"></i>
+                    <span>Animaux</span>
+                    </a>
+                </li>
+                <li ><a href="../nourriture/list.html" id="nourriture">
+                    <i class="fa-solid fa-bone"></i>
+                    <span>Nourriture</span>
+                    </a>
+                </li>
+                <li ><a id="vaccinations" href="../vaccinations/list.html">
+                    <i class="fa-solid fa-syringe"></i>
+                    <span>Vaccinations</span> 
+                    </a>
+                </li>
+                <li ><a id="RDV" href="../RDV/list.html">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>Rendez-vous</span> 
+                    </a>
+                </li>
+                <li   class="actif"><a id="espece" href="list.html">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <span>Especes</span> 
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- FILTRES ET RECHERCHE -->
+    <div style="padding:20px; background:#f9f9f9; margin:20px 20px 20px 20px; border-radius:8px; display:grid; gap:12px;">
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px;">
+        <input id="searchInput" type="text" placeholder="🔍 Rechercher par espèce..." style="padding:10px; border:1px solid #ccc; border-radius:6px; font-size:14px;">
+        <div style="padding:10px; opacity:0;"></div>
+        <div style="padding:10px; opacity:0;"></div>
+      </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center;">
+        <button id="exportBtn" onclick="exportToCSV()" style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px; height:40px;">📥 Exporter CSV</button>
+        <button id="add" style="padding:10px 20px; background:#1f92ac; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px; height:40px; margin-bottom:20px;">+ Ajout</button>
+      </div>
+      <!-- BOUTONS DE TRI -->
+      <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:15px 0;">
+        <button onclick="toggleSort('nom')" style="padding:8px 14px; background:#1f92ac; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px; transition:0.3s;">Nom ↑↓</button>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap;">
+        <label style="font-weight:600; display:flex; align-items:center; gap:8px;"><span id="per_page_label">Par page:</span>
+          <select id="pageSize" style="padding:8px; border:1px solid #ccc; border-radius:6px;">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+        </label>
+        <div style="display:flex; gap:8px; align-items:center; position:absolute; left:50%; transform:translateX(-50%);">
+          <button id="prevBtn" style="padding:8px 12px; border:1px solid #1f92ac; background:white; color:#1f92ac; border-radius:6px; cursor:pointer; font-weight:600;">← Précédent</button>
+          <div id="pageNumbers" style="display:flex; gap:4px;"></div>
+          <button id="nextBtn" style="padding:8px 12px; border:1px solid #1f92ac; background:white; color:#1f92ac; border-radius:6px; cursor:pointer; font-weight:600;">Suivant →</button>
+        </div>
+        <div style="width:1px;"></div>
+      </div>
+    </div>
+    
+    <button id="add" style="display:none;">Ajout</button>
+    <div id="especesList"></div>
+    <footer>
+        <select class="langue"id="langue">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+        </select>
+    </footer>
+    <script src="../../assets/JS/auth.js"></script>
+    <script src="../../assets/JS/init-database.js"></script>
+    <script src="../../assets/JS/liste.js"></script>
+</body>
+</html>

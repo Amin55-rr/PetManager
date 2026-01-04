@@ -1,0 +1,116 @@
+/* ------------------------------------------------------------
+   BOUTON AJOUT (même structure que ANIMAUX)
+------------------------------------------------------------ */
+#add{
+    font-family: 'Poppins', sans-serif; 
+    position: absolute;
+    margin-top: 30px;
+    right: 30px;
+    background: #1f92ac;
+    color : white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px 5px 5px 5px;
+    width: 100px;
+    transition: 0.25s ease;
+}
+
+#add:hover {
+    background: #18788c;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------
+   CONTENEUR LISTE
+------------------------------------------------------------ */
+#especesList {
+    padding: 20px;
+    width: 100%;
+    margin-top: 80px;  /* 🔥 espace pour le bouton en absolute */
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------
+   CARTE ESPÈCE
+------------------------------------------------------------ */
+.bloc {
+    background: white;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    text-align: center; /* emoji + nom centrés */
+}
+
+/* Emoji plus grand */
+.bloc h3:first-child {
+    font-size: 40px;
+    margin: 0;
+}
+
+/* Nom de l'espèce */
+.bloc h3:nth-child(2) {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #0b7285; /* bleu theme */
+    font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   BOUTONS SUPPRIMER / EDIT (même style ANIMAUX)
+------------------------------------------------------------ */
+.bloc button {
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 6px 5px;
+    width: 120px;
+    transition: 0.25s ease;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Supprimer */
+.bloc .del {
+    background: #e63946;
+    color: white;
+}
+
+.bloc .del:hover {
+    background: #c62b37;
+}
+
+/* Modifier si jamais tu veux l'activer plus tard */
+.bloc .edit {
+    background: #1f92ac;
+    color: white;
+}
+
+.bloc .edit:hover {
+    background: #18788c;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+@media (max-width: 600px) {
+    #add {
+        right: 10px;
+        width: 90px;
+    }
+
+    #especesList {
+        padding: 10px;
+    }
+
+    .bloc {
+        width: 95%;
+    }
+}

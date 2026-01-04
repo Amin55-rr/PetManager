@@ -1,0 +1,82 @@
+/* ---------------------------------------------------------
+   Style commun Ajout Espèce / Ajout Animal
+--------------------------------------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #DFF5FF, #F8FBFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Le cadre principal */
+.Ajout {
+    width: 380px;
+    padding: 30px 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Label */
+.Ajout label {
+    font-size: 17px;
+    color: #4AB3D8;
+    font-weight: 600;
+}
+
+/* Select */
+#selectEspece {
+    padding: 10px 15px;
+    border: 2px solid #89d2e8;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#selectEspece:focus {
+    border-color: #4AB3D8;
+    box-shadow: 0 0 6px rgba(74, 179, 216, 0.4);
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+/* Bouton Ajouter */
+.ajout {
+    background: #4AB3D8;
+    color: white;
+    font-weight: 600;
+}
+
+.ajout:hover {
+    background: #3598bb;
+}
+
+/* Bouton Annuler */
+.annuler {
+    background: #e63946;
+    color: white;
+    font-weight: 600;
+}
+
+.annuler:hover {
+    background: #c62b37;
+}
+

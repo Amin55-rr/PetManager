@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajouter RDV</title>
+
+  <link rel="stylesheet" href="../../assets/CSS/addrdv.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="card">
+    <h3>Nouveau rendez-vous</h3>
+
+    <form id="rdvForm">
+      <div class="grid-2">
+
+        <div class="field">
+          <label>Animal <span class="req">*</span></label>
+          <select id="animalName" required>
+            <option value="">Sélectionner</option>
+          </select>
+          <small class="err" id="errAnimal"></small>
+        </div>
+
+        <div class="field">
+          <label>Motif <span class="req">*</span></label>
+          <input id="reason" type="text" placeholder="Ex: Checkup, Vaccination..." required>
+          <small class="err" id="errReason"></small>
+        </div>
+
+        <div class="field">
+          <label>Date <span class="req">*</span></label>
+          <input id="date" type="date" required>
+          <small class="err" id="errDate"></small>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary btn-wide" type="submit">Ajouter</button>
+        <a class="btn btn-light" href="./list.html">Annuler</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../assets/JS/addrdv.js"></script>
+  <script src="../../assets/JS/dark-mode.js"></script>
+</body>
+</html>
