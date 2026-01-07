@@ -140,6 +140,7 @@ function setText(id, text) {
   if (el) el.textContent = text;
 }
 
+// Échapper le HTML pour éviter les injections
 function escapeHtml(str) {
   return String(str ?? "")
     .replaceAll("&", "&amp;")
@@ -313,7 +314,7 @@ function deleteAnimalEverywhere(id) {
   applyFiltersAndSearch();
 }
 
-// ===== EDIT MODAL =====
+// popup modification animal 
 async function editAnimalModal(id) {
   const animal = animaux.find(a => Number(a.id) === Number(id));
   if (!animal) return;

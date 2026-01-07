@@ -4,6 +4,10 @@ function getDB(){ return JSON.parse(localStorage.getItem(DB_KEY) || "{}"); }
 function saveDB(db){ localStorage.setItem(DB_KEY, JSON.stringify(db)); }
 
 function getAnimals(db){
+  // Chercher d'abord dans localStorage.animaux (structure de l'app)
+  const animaux = JSON.parse(localStorage.getItem("animaux") || "[]");
+  if (animaux.length > 0) return animaux;
+  // Fallback sur db.animals si disponible
   return Array.isArray(db.animals) ? db.animals : [];
 }
 function getRDV(db){
@@ -44,8 +48,11 @@ function fillAnimals(){
 
   animals.forEach(a => {
     const opt = document.createElement("option");
-    opt.value = a.name; // RDV dans ton db actuel utilise animalName
-    opt.textContent = a.species ? `${a.name} (${a.species})` : a.name;
+    opt.value = a.nom || a.name; // Utiliser nom (structure de l'app)
+    // Afficher nom et emoji (structure de l'app: nom, espece_emoji)
+    const emoji = a.espece_emoji || a.emoji || "";
+    const name = a.nom || a.name || "";
+    opt.textContent = emoji ? `${emoji} ${name}` : name;
     sel.appendChild(opt);
   });
 }

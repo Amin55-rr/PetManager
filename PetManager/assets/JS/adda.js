@@ -70,6 +70,7 @@ function applyTranslations() {
   if (option_female) option_female.textContent = t.option_female || "Femelle";
 }
 
+// Charger les traductions en fonction de la langue sélectionnée
 function loadLanguage() {
   const langue = document.getElementById("langue")?.value || localStorage.getItem("lang") || "fr";
   

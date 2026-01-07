@@ -33,7 +33,7 @@ function filterByPeriod(dateStr, period, baseYear) {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const yearRef = baseYear || now.getFullYear();
-  
+  // Comparaisons selon la période
   if (period === 'today') {
     const itemDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     return itemDate.getTime() === today.getTime();

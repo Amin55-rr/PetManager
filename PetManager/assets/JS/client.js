@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4) charger les données
   const db = JSON.parse(localStorage.getItem("db") || "{}");
 
-  // ✅ TES ANIMAUX sont ici (localStorage "animaux")
+  //  TES ANIMAUX sont ici (localStorage "animaux")
   const animauxLS = JSON.parse(localStorage.getItem("animaux") || "[]");
 
   // fallback si jamais tu utilises aussi db.animals

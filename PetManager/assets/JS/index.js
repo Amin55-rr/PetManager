@@ -31,7 +31,7 @@ function testauth() {
     return;
   }
 
-  // ✅ CLIENT (localStorage comptes)
+  //  CLIENT (localStorage comptes)
   const comptes = JSON.parse(localStorage.getItem("comptes") || "[]");
   const client = comptes.find(c => c.email.toLowerCase() === mail && c.mdp === mdp);
 
